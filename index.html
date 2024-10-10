@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarrelloHTML</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form action="">
+      <div class="container">
+        <label for="name">Nome: </label>
+        <input
+          type="text"
+          name="name"
+          id="nameIn"
+          placeholder="John"
+          oninput="checkName(this.id)"
+          required
+        />
+        <div class="nameError" id="nameError">*Inserisci nome valido</div>
+        <label for="surname">Cognome:</label>
+        <input
+          type="text"
+          name="surname"
+          id="surnameIn"
+          placeholder="Doe"
+          oninput="checkSurname(this.id)"
+          required
+        />
+        <div class="surnameError" id="surnameError">
+          *Inserisci un cognome valido
+        </div>
+        <label for="phone">Numero di telefono: </label>
+        <input
+          type="text"
+          name="phone"
+          id="phoneIn"
+          placeholder="1234567890"
+          oninput="checkPhone(this.id)"
+          required
+        />
+        <div class="phoneError" id="phoneError">
+          *Inserisci un numero di telefono valido
+        </div>
+        <label for="street">Indirizzo: </label>
+        <input
+          type="text"
+          name="street"
+          id="streetIn"
+          placeholder="Paper Street, 537"
+          oninput="checkStreet(this.id)"
+          required
+        />
+        <div class="streetError" id="streetError">
+          *Inserisci un indirizzo valido
+        </div>
+        <label for="cFisc">Codice Fiscale: </label>
+        <input
+          type="text"
+          name="cFisc"
+          id="cFiscIn"
+          placeholder="ABCDEF01G23H456I"
+          oninput="checkCf(this.id)"
+          required
+        />
+        <div class="cFiscError" id="cFiscError">
+          *Inserisci un codice fiscale valido: ABCDEF01G23H456I
+        </div>
+        <label for="age">Età: </label>
+        <input
+          type="number"
+          name="age"
+          id="ageIn"
+          placeholder="0-99"
+          oninput="checkAge(this.id)"
+          min="0"
+          max="99"
+          required
+        />
+
+        <div class="parentInfo" id="parentInfo">
+          <div class="txt">Informazioni di un tutore legale:</div>
+          <label for="name">Nome: </label>
+          <input
+            type="text"
+            name="name"
+            id="nameIn"
+            class="pInfos"
+            placeholder="John"
+            oninput="checkName(this.id)"
+            required
+          />
+          <div class="nameError" id="nameError">*Inserisci nome valido</div>
+          <label for="surname">Cognome:</label>
+          <input
+            type="text"
+            name="surname"
+            id="surnameIn"
+            class="pInfos"
+            placeholder="Doe"
+            oninput="checkSurname(this.id)"
+            required
+          />
+          <div class="surnameError" id="surnameError">
+            *Inserisci un cognome valido
+          </div>
+          <label for="cFisc">Codice Fiscale: </label>
+          <input
+            type="text"
+            name="cFisc"
+            id="cFiscIn"
+            class="pInfos"
+            placeholder="ABCDEF01G23H456I"
+            oninput="checkCf(this.id)"
+            required
+          />
+          <div class="cFiscError" id="cFiscError">
+            *Inserisci un codice fiscale valido: ABCDEF01G23H456I
+          </div>
+        </div>
+        <div class="btnContainer">
+          <input type="submit" value="Accedi" id="submitBtn" class="button" />
+          <input type="reset" value="Cancella" id="resetBtn" class="button" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

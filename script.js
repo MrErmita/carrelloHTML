@@ -72,22 +72,30 @@ function checkStreet(id) {
 }
 
 function checkAge(id) {
-  let age = document.getElementById(id).value;
-  if (age >= 18) {
+  let age = parseInt(document.getElementById(id).value);
+  let pInfoElements = document.getElementsByClassName("pInfos");
+  if (!isNaN(age) && age >= 0 && age <= 99) {
     optim(id, true);
-    document.getElementById("ageError").style.display = "none";
-    let pInfoElements = document.getElementsByClassName("pInfos");
+
+    if (age < 18) {
+      document.getElementById("parentInfo").style.display = "flex";
+      document.getElementById("ageError").style.display = "none";
+      for (let i = 0; i < pInfoElements.length; i++) {
+        pInfoElements[i].setAttribute("required", "required");
+      }
+    } else {
+      document.getElementById("parentInfo").style.display = "none";
+      document.getElementById("ageError").style.display = "none";
+      for (let i = 0; i < pInfoElements.length; i++) {
+        pInfoElements[i].removeAttribute("required");
+      }
+    }
+  } else {
+    optim(id, false);
+    document.getElementById("parentInfo").style.display = "none";
+    document.getElementById("ageError").style.display = "block";
     for (let i = 0; i < pInfoElements.length; i++) {
       pInfoElements[i].removeAttribute("required");
-    }
-  } else if (age < 0 || age > 99) {
-    optim(id, false);
-    document.getElementById("ageError").style.display = "block";
-  } else {
-    document.getElementById("parentInfo").style.display = "flex";
-    let pInfoElements = document.getElementsByClassName("pInfos");
-    for (let i = 0; i < pInfoElements.length; i++) {
-      pInfoElements[i].setAttribute("required", "required");
     }
   }
 }

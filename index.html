@@ -9,7 +9,8 @@
   </head>
   <body>
     <form action="">
-      <div class="container">
+      <div class="container infos" id="form">
+        <h1>i tuoi dati</h1>
         <label for="name">Nome: </label>
         <input
           type="text"
@@ -66,7 +67,7 @@
           required
         />
         <div class="cFiscError" id="cFiscError">
-          *Inserisci un codice fiscale valido: ABCDEF01G23H456I
+          *Inserisci un codice fiscale valido
         </div>
         <label for="age">Età: </label>
         <input
@@ -79,7 +80,7 @@
           max="99"
           required
         />
-        <div class="ageError" id="ageError">*Inserisci un'età valida: 0-99</div>
+        <div class="ageError" id="ageError">*Inserisci un'età valida</div>
         <div class="parentInfo" id="parentInfo">
           <div class="txt">Informazioni di un tutore legale:</div>
           <label for="name">Nome: </label>
@@ -117,7 +118,7 @@
             required
           />
           <div class="cFiscError" id="cFiscError">
-            *Inserisci un codice fiscale valido: ABCDEF01G23H456I
+            *Inserisci un codice fiscale valido
           </div>
         </div>
 
@@ -147,8 +148,14 @@
         
 
         <div class="btnContainer">
-          <input type="submit" value="Invia" id="submitBtn" class="button" />
+          <input type="button" value="Invia" id="submitBtn" class="button" onclick="checkForm()"/>
           <input type="reset" value="Cancella" id="resetBtn" class="button" />
+        </div>
+      </div>
+      <div class="container order" id="order">
+        <h1>recap ordine</h1>
+        <div class="recap" id="recap">
+
         </div>
       </div>
     </form>

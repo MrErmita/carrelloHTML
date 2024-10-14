@@ -99,3 +99,49 @@ function checkAge(id) {
     }
   }
 }
+
+function checkForm() {
+  
+  let name = document.getElementById("nameIn").value;
+  let surname = document.getElementById("surnameIn").value;
+  let phone = document.getElementById("phoneIn").value;
+  let cf = document.getElementById("cFiscIn").value;
+  let street = document.getElementById("streetIn").value;
+  let age = parseInt(document.getElementById("ageIn").value);
+  if (
+    LETTERS_REGEX.test(name) &&
+    LETTERS_REGEX.test(surname) &&
+    PHONE_REGEX.test(phone) &&
+    CF_REGEX.test(cf) &&
+    street
+  ) {
+    document.getElementById("form").style.display = "none";
+
+    cf = cf.toUpperCase();
+
+    let kurivoltQty = parseInt(document.getElementById("kurivoltQty").value);
+    let dragoBiancoQty = parseInt(document.getElementById("dragoBiancoQty").value);
+    let kaiserUtopiaQty = parseInt(document.getElementById("kaiserUtopiaQty").value);
+
+    let price = 0;
+    price += kurivoltQty * 10;
+    price += dragoBiancoQty * 1999.99;
+    price += kaiserUtopiaQty * 945.25;
+
+    document.getElementById("recap").innerHTML = `
+    <p>Nome: ${name}</p>
+    <p>Cognome: ${surname}</p>
+    <p>Numero di telefono: ${phone}</p>
+    <p>Codice Fiscale: ${cf}</p>
+    <p>Indirizzo: ${street}</p>
+    <p>Età: ${age}</p>
+    <p>Qnt. Kurivolt: ${kurivoltQty}</p>
+    <p>Qnt. Drago Bianco: ${dragoBiancoQty}</p>
+    <p>Qnt. Utopia Kaiser: ${kaiserUtopiaQty}</p>
+    <p>Totale: €${price.toFixed(2)}</p>
+    `;
+
+
+    document.getElementById("order").style.display = "flex";
+  }
+}

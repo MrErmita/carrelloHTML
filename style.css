@@ -176,3 +176,7 @@ img {
   margin-top: 5px;
   height: 30px;
 }
+
+.order {
+  display: none;
+}

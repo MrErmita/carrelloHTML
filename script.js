@@ -129,19 +129,21 @@ function checkForm() {
     price += kaiserUtopiaQty * 945.25;
 
     document.getElementById("recap").innerHTML = `
-    <p>Nome: ${name}</p>
-    <p>Cognome: ${surname}</p>
-    <p>Numero di telefono: ${phone}</p>
-    <p>Codice Fiscale: ${cf}</p>
-    <p>Indirizzo: ${street}</p>
-    <p>Età: ${age}</p>
-    <p>Qnt. Kurivolt: ${kurivoltQty}</p>
-    <p>Qnt. Drago Bianco: ${dragoBiancoQty}</p>
-    <p>Qnt. Utopia Kaiser: ${kaiserUtopiaQty}</p>
-    <p>Totale: €${price.toFixed(2)}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Nome:</strong> ${name}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Cognome:</strong> ${surname}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Numero di telefono:</strong> ${phone}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Codice Fiscale:</strong> ${cf}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Indirizzo:</strong> ${street}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Età:</strong> ${age}</p>
+    <hr style="border: 1px solid #95BB72;">
+    <p style="font-size: 16px; color: #333;"><strong>Quantità Kurivolt:</strong> ${kurivoltQty}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Quantità Drago Bianco:</strong> ${dragoBiancoQty}</p>
+    <p style="font-size: 16px; color: #333;"><strong>Quantità Utopia Kaiser:</strong> ${kaiserUtopiaQty}</p>
+    <hr style="border: 1px solid #95BB72;">
+    <p style="font-size: 18px; color: #4B6043; font-weight: bold;">Totale: €${price.toFixed(2)}</p>
     `;
-
-
+    
+    
     document.getElementById("order").style.display = "flex";
   }
 }
